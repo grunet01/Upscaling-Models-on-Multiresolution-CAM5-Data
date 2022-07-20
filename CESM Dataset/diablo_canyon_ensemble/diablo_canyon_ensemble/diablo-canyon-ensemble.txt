@@ -1,0 +1,19 @@
+Dataset Name: diablo_canyon_ensemble.dat
+
+Overview:  This dataset is released in support of the methods detailed in our paper published in Atmospheric Chemistry and Physics (citation below). A tracer release experiment conducted at a nuclear power plant is used to quantify uncertainty in simulating atmospheric dispersion and to develop and test inverse modeling methods. A non-reactive gas was released at the Diablo Canyon power plant and measured at a large number of downwind locations. Assuming no knowledge of the release parameters, ensemble weather and transport simulations, machine learning algorithms, and Bayesian inversion are used to infer the release location, time, and amount. 
+
+Objective: Use the information in a Latin hypercube ensemble and optimization of the likelihood metrics to infer the values of the actual release parameters. 
+
+Summary: The Diablo Canyon Ensemble dataset contains 40,162 rows and 13 columns. Each row represents a different ensemble simulation using the FLEXPART dispersion model and Weather Research & Forecasting (WRF) model. The first 40,000 rows are members of a Latin hypercube ensemble generated using the Lawrence Livermore National Laboratory's UQ Pipeline software to sample a uniform prior distribution of source input parameters in FLEXPART and configuration options in WRF. The final 162 rows are simulations that use the actual tracer release parameters in FLEXPART, but vary the configuration options in WRF. Columns 1-6 contain the continuous values of the FLEXPART input source parameters, columns 7-11 contain the categorical values of the WRF configuration parameters, and columns 12-13 contain the likelihood distance metrics between the simulations and observations (mean squared error and correlation).
+
+Format:
+Rows 1-40000: Latin hypercube ensemble simulations
+Rows 40001-40162: simulations using actual source input values
+Columns 1-6: six continuous FLEXPART source term input values
+Columns 7-11: five categorical WRF configuration inputs
+Column 12-13: likelihood distance metrics between the simulations and 
+observations
+
+Acknowledgments: This data was constructed under Laboratory Directed Research and Development project PLS-14ERD006, created under the auspices of the US Department of Energy by Lawrence Livermore National Laboratory under Contract DE-AC52-07NA27344, and is released under UCRL number LLNL-MI-741937.
+
+Citation: Lucas, D. D., Simpson, M., Cameron-Smith, P., and Baskett, R. L. Bayesian inverse modeling of the atmospheric transport and emissions of a controlled tracer release from a nuclear power plant. Atmos. Chem. Phys., 17, 1-23, doi:10.5194/acp-17-1-2017, 2017.
